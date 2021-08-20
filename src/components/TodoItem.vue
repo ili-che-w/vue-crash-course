@@ -29,22 +29,23 @@ export default {
 
 <style scoped>
 li {
-  border: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 2rem;
   margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid #ccc;
 }
 
 .todo__remove {
-  background-color: rgb(206, 23, 23);
-  color: white;
+  height: 25px;
+  width: 25px;
   border: none;
   border-radius: 50%;
   font-size: 20px;
   line-height: 25px;
-  height: 25px;
-  width: 25px;
+  background-color: rgb(206, 23, 23);
+  color: white;
+  cursor: pointer;
 }
 
 .todo__checkbox {
