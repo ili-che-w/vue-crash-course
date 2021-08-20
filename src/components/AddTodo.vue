@@ -32,7 +32,6 @@ export default {
 <style scoped>
 form {
   display: flex;
-  margin-bottom: 2rem;
 }
 
 input {

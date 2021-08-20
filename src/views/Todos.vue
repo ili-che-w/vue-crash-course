@@ -2,12 +2,20 @@
   <div class="container">
     <h2>Todo list</h2>
 
-    <AddTodo @add-todo-item="addTodoItem" />
+    <div class="row">
+      <AddTodo @add-todo-item="addTodoItem" />
+
+      <select v-model="filter">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="uncompleted">Uncompleted</option>
+      </select>
+    </div>
 
     <Loader v-if="loading" />
 
     <TodoList
-      :todos="todos"
+      :todos="todosFiltered"
       @remove-todo-item="removeTodoItem"
       v-else-if="todos.length"
     />
@@ -28,7 +36,22 @@ export default {
   data() {
     return {
       todos: [],
-      loading: true
+      loading: true,
+      filter: 'all'
+    }
+  },
+  computed: {
+    todosFiltered() {
+      switch (this.filter) {
+        case 'all':
+          return this.todos
+        case 'completed':
+          return this.todos.filter(todo => todo.completed)
+        case 'uncompleted':
+          return this.todos.filter(todo => !todo.completed)
+        default:
+          return []
+      }
     }
   },
   components: {
