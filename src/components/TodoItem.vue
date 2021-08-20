@@ -4,7 +4,7 @@
       type="checkbox"
       class="todo__checkbox"
       :id="`todo_${index}`"
-      @change="todo.completed = !todo.completed"
+      v-model="todo.completed"
     />
 
     <label
