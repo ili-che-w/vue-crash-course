@@ -1,8 +1,18 @@
 <template>
   <div class="container">
     <h2>Todo list</h2>
+
     <AddTodo @add-todo-item="addTodoItem" />
-    <TodoList :todos="todos" @remove-todo-item="removeTodoItem" />
+
+    <TodoList
+      :todos="todos"
+      @remove-todo-item="removeTodoItem"
+      v-if="todos.length"
+    />
+
+    <p v-else>
+      <em>No todos</em>
+    </p>
   </div>
 </template>
 
