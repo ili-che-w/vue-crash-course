@@ -28,3 +28,34 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+form {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+input {
+  min-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  padding: 0.5rem;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+input:active,
+input:focus {
+  outline: none;
+}
+
+button {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  border-left: none;
+  padding: 0.5rem 2rem;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #2c3e50;
+}
+</style>

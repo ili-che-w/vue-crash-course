@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <h1>Todo application</h1>
+    <header class="container-fluid">
+      <h1>Todo application</h1>
+    </header>
+
     <router-view />
   </div>
 </template>
@@ -13,5 +16,15 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container {
+  width: 40%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  width: 100%;
 }
 </style>

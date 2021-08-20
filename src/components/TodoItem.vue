@@ -35,6 +35,7 @@ export default {
 li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
   padding: 0.5rem 2rem;
   border: 1px solid #ccc;

@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <h2>Todo list</h2>
     <AddTodo @add-todo-item="addTodoItem" />
-    <hr />
     <TodoList :todos="todos" @remove-todo-item="removeTodoItem" />
   </div>
 </template>
