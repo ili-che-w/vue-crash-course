@@ -1,7 +1,11 @@
 <template>
   <li>
-    <span>
-      <input type="checkbox" class="todo__checkbox" />
+    <span :class="{ 'todo--completed': todo.completed }">
+      <input
+        type="checkbox"
+        class="todo__checkbox"
+        @change="todo.completed = !todo.completed"
+      />
       <strong>{{ todo.id }}</strong>
       {{ todo.title }}
     </span>
