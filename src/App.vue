@@ -27,4 +27,10 @@
 .container-fluid {
   width: 100%;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
 </style>
