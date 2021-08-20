@@ -1,14 +1,20 @@
 <template>
-  <li>
-    <span :class="{ 'todo--completed': todo.completed }">
-      <input
-        type="checkbox"
-        class="todo__checkbox"
-        @change="todo.completed = !todo.completed"
-      />
+  <li class="todo">
+    <input
+      type="checkbox"
+      class="todo__checkbox"
+      :id="`todo_${index}`"
+      @change="todo.completed = !todo.completed"
+    />
+
+    <label
+      :for="'todo_' + index"
+      class="todo__title"
+      :class="{ 'todo__title--completed': todo.completed }"
+    >
       <strong>{{ index }}</strong>
       {{ todo.title | uppercase }}
-    </span>
+    </label>
 
     <button class="todo__remove" @click="$emit('remove-todo-item', todo.id)">
       &times;
@@ -37,9 +43,8 @@ export default {
 </script>
 
 <style scoped>
-li {
+.todo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
   padding: 0.5rem 2rem;
@@ -49,12 +54,18 @@ li {
 .todo__remove {
   height: 25px;
   width: 25px;
+  margin-left: auto;
   border: none;
   border-radius: 50%;
   font-size: 20px;
   line-height: 25px;
   background-color: rgb(206, 23, 23);
   color: white;
+}
+
+.todo__checkbox,
+.todo__title,
+.todo__remove {
   cursor: pointer;
 }
 
@@ -62,7 +73,13 @@ li {
   margin-right: 1rem;
 }
 
-.todo--completed {
+.todo__title {
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.todo__title--completed {
+  color: #aaa;
   text-decoration: line-through;
 }
 </style>
