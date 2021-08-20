@@ -7,7 +7,7 @@
         @change="todo.completed = !todo.completed"
       />
       <strong>{{ index }}</strong>
-      {{ todo.title }}
+      {{ todo.title | uppercase }}
     </span>
 
     <button class="todo__remove" @click="$emit('remove-todo-item', todo.id)">
@@ -26,6 +26,11 @@ export default {
     index: {
       type: Number,
       required: true
+    }
+  },
+  filters: {
+    uppercase(value) {
+      return value.toUpperCase()
     }
   }
 }
