@@ -1,5 +1,5 @@
 <template>
-    <li>
-        Todo item 1
-    </li>
+  <li>
+    Todo item 1
+  </li>
 </template>
