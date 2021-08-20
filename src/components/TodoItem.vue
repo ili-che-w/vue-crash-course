@@ -10,7 +10,9 @@
       {{ todo.title }}
     </span>
 
-    <button class="todo__remove">&times;</button>
+    <button class="todo__remove" @click="$emit('remove-todo-item', todo.id)">
+      &times;
+    </button>
   </li>
 </template>
 
